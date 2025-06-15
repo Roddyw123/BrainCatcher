@@ -1,2 +1,2 @@
-# BrainCatcher
-A Brainfuck to C Translator
+# CBT
+C Brainfuck Transformer (abbreviated CBT)
