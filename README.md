@@ -61,29 +61,6 @@ CBT--C-Brainfuck-Transpiler-/
 │   │   └── samples/
 ```
 
-CBT--C-Brainfuck-Transpiler-/
-├── LICENSE
-├── README.md           # (you are here)
-├── cbt/
-│   ├── bf2c/           # Brainfuck-to-C transpiler
-│   │   ├── src/
-│   │   │   ├── main.c
-│   │   │   ├── tokenise.c/.h
-│   │   │   ├── detect_loop.c
-│   │   │   ├── optimization.c
-│   │   │   ├── emitter.c/.h
-│   │   │   ├── codegen.h
-│   │   │   └── out.c
-│   │   ├── Makefile
-│   │   └── brainfuck-tests/...
-│   └── c2bf/           # C-to-Brainfuck transpiler
-│       ├── parser.c/.h
-│       ├── emitter.c/.h
-│       ├── Makefile
-│       └── samples/
-```
-
----
 
 ## Installation
 
@@ -101,7 +78,6 @@ CBT--C-Brainfuck-Transpiler-/
    cd ../c2bf && make
    ```
 
----
 
 ## Usage
 
