@@ -1,4 +1,4 @@
-# CBT: C↔Brainfuck Transpiler
+## CBT: C↔Brainfuck Transpiler
 
 A source-to-source compiler suite for translating between Brainfuck and C. This project provides two tools:
 
