@@ -33,4 +33,63 @@ Both tools include a robust set of optimizations and a suite of tests to ensure 
 ---
 
 ## Project Structure
+CBT--C-Brainfuck-Transpiler-/
+├── LICENSE
+├── README.md # (you are here)
+├── cbt/
+│ ├── bf2c/ # Brainfuck-to-C transpiler
+│ │ ├── src/
+│ │ │ ├── main.c
+│ │ │ ├── tokenise.c/.h
+│ │ │ ├── detect_loop.c
+│ │ │ ├── optimization.c
+│ │ │ ├── emitter.c/.h
+│ │ │ ├── codegen.h
+│ │ │ └── out.c
+│ │ ├── Makefile
+│ │ └── brainfuck-tests/...
+│ └── c2bf/ # C-to-Brainfuck transpiler
+│ ├── parser.c/.h
+│ ├── emitter.c/.h
+│ ├── Makefile
+│ └── samples/
+
+
+
+---
+
+## Installation
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/Roddyw123/CBT--C-Brainfuck-Transpiler-.git
+   cd CBT--C-Brainfuck-Transpiler-
+2. Build both tools
+cd cbt/bf2c && make
+cd ../c2bf && make
+
+## Usage
+# Brainfuck to C:
+
+Transpile foo.bf to foo.c using char I/O mode:
+./cbt/bf2c/bf2c foo.bf foo.c --mode=char
+
+Compile and run:
+gcc -O2 foo.c -o foo
+./foo [< input.txt]
+
+# C To Brainfuck:
+Transpile example.c to example.bf:
+./cbt/c2bf/c2bf example.c example.bf
+
+Run in an interpreter (e.g., bf)
+bf example.bf
+
+## Contributing
+Contributions welcome! Please open issues or pull requests for bug reports, improvements, or new test cases.
+
+## License
+This project is released under the MIT License. See LICENSE for details.
+
 
