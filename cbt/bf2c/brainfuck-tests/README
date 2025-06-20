@@ -1,0 +1,36 @@
+# Test Suite
+
+This directory contains a set of Brainfuck programs designed to verify that the C code produced by **bf2c**—with all optimizations enabled—behaves correctly.
+
+| File           | What it tests                                |
+| -------------- | --------------------------------------------- |
+| **mulLoop.bf** | multiplication loops and copy loops          |
+| **rle.bf**     | run‐length encoding and constant folding      |
+| **scanLoop.bf**| scan loops (`[>]`, `[<]`)                    |
+| **zeroLoop.bf**| zero‐loop optimization (`[-]`)                |
+| **all.bf**     | every optimization in one combined example    |
+| **misc.bf**    | basic I/O (`.` and `,`)                       |
+
+Each of these has two variants:
+
+- A **trivial** version for quick smoke‐testing  
+- A **full** version that exercises the edge cases  
+
+> **All tests pass** under both **char** and **number** I/O modes.  
+
+To run them:
+
+```bash
+# Build the transpiler and translate every .bf → .c
+make all
+
+# For each test file:
+for bf in mulLoop rle scanLoop zeroLoop all misc; do
+  ./bf2c $bf.bf $bf.c --mode=char
+  gcc -O2 -o $bf-char $bf.c
+  ./ $bf-char < $bf-input.txt
+
+  ./bf2c $bf.bf $bf-num.c --mode=number
+  gcc -O2 -o $bf-num $bf-num.c
+  ./ $bf-num < $bf-input.txt
+done

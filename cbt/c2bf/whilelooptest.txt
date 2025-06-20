@@ -1,0 +1,7 @@
+char x = getchar();
+char finish = 122;
+
+while (x < finish) {
+    putchar(x);
+    x = x + 1;
+}
