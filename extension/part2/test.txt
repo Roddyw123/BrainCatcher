@@ -1,0 +1,11 @@
+putchar(65);
+putchar(66);
+putchar(67);
+putchar(69);
+
+char a = 97;
+char b = 98;
+char c = 99;
+putchar(a);
+putchar(b);
+putchar(c);
